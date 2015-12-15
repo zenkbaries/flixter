@@ -8,60 +8,69 @@
 </head>
 <body>
 
+	<div id="wrap">
+		<nav class="navbar navbar-inverse" role="navigation">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <!-- <a class="navbar-brand" href="#">Flixter</a> -->
+		      <%= link_to 'Flixter', root_path, :class => 'navbar-brand' %>
 
-	<nav class="navbar navbar-inverse" role="navigation">
-	  <div class="container-fluid">
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <!-- <a class="navbar-brand" href="#">Flixter</a> -->
-	      <%= link_to 'Flixter', root_path, :class => 'navbar-brand' %>
+		    </div>
 
-	    </div>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <!--   <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+		        <li><a href="#">Link</a></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		          
+		        </li>
+		      </ul> -->
+		     
 
-	    <!-- Collect the nav links, forms, and other content for toggling -->
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	    <!--   <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-	        <li><a href="#">Link</a></li>
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-	          
-	        </li>
-	      </ul> -->
-	     
+		      <ul class="nav navbar-nav navbar-right">
 
-	      <ul class="nav navbar-nav navbar-right">
+		      	<!-- # Sign in  -->
+		      	<% if user_signed_in? %>
+		      		<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>'
+		      	<% else %>
+		      		<li><%= link_to 'Sign in', new_user_session_path %></li>
+		      		<li><%= link_to 'Sign up', new_user_registration_path %></li>
+		      	<% end %>
+		      	 <!-- end Sign in link -->
 
-	      	<!-- # Sign in  -->
-	      	<% if user_signed_in? %>
-	      		<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>'
-	      	<% else %>
-	      		<li><%= link_to 'Sign in', new_user_session_path %></li>
-	      		<li><%= link_to 'Sign up', new_user_registration_path %></li>
-	      	<% end %>
-	      	 <!-- end Sign in link -->
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
 
-	      </ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
+		<!-- # Alert section -->
+		<% if notice.present? %>
+			<p class="alert alert-info"><%= notice %></p>
+		<% end %>
+		<% if alert.present? %>
+			<p class="alert alert-danger"><%= alert %></p>
+		<% end %>
+		<!-- # end Alert section -->
 
-	<!-- # Alert section -->
-	<% if notice.present? %>
-		<p class="alert alert-info"><%= notice %></p>
-	<% end %>
-	<% if alert.present? %>
-		<p class="alert alert-danger"><%= alert %></p>
-	<% end %>
-	<!-- # end Alert section -->
-
-<%= yield %>
+		<%= yield %>
+	</div>
+	<br class="clr" />
+	<div id="footer">
+		<div class="container">
+			<b>Footer Here</b>
+			<br />
+			<% link_to 'Link', '#' %>
+		</div>
+	</div>
 
 </body>
 </html>
