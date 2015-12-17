@@ -4,8 +4,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one: 
 # column: value
-#
-two: {}
+	 :title => TitleOne
+   :description => DescriptionOne
+   :cost => 10.00
+
+two: 
 #  column: value
+	:title => TitleTwo
+  :description => DescriptionTwo
+  :cost => 20.00

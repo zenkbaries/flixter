@@ -44,6 +44,9 @@ gem 'devise', '>= 3.2.4'
 # Use simple_form
 gem 'simple_form'
 
+# Use Factory Girl
+gem 'factory_girl'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
