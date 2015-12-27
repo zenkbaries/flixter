@@ -26,6 +26,6 @@ class Instructor::LessonsController < ApplicationController
 
 
 	def lesson_params
-		params.required(:lesson).permit(:title, :subtitle)
+		params.required(:lesson).permit(:title, :subtitle, :video)
 	end
 end
