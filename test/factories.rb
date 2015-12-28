@@ -1,7 +1,7 @@
 FactoryGirl.define do  
-	# factory :enrollment do
+	factory :enrollment do
     
- #  end
+  end
 
 	factory :user do
 		email "test@test.com"
@@ -12,9 +12,7 @@ end
 
 
 FactoryGirl.define do  
-	# factory :enrollment do
-    
- #  end
+
 
 	factory :course do
 		title "TitleOne"
