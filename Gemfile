@@ -62,6 +62,9 @@ gem 'mini_magick', '~> 4.3.1'
 # Gemfile CarrierWave-AWS
 gem 'carrierwave-aws'
 
+# Gemfile Stripe
+gem 'stripe'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
