@@ -38,8 +38,6 @@ class Instructor::LessonsController < ApplicationController
 	def current_section
 		@current_section ||= Section.find(params[:section_id])
 	end
-
-
 	def lesson_params
 		params.required(:lesson).permit(:title, :subtitle, :video, :row_order_position)
 	end

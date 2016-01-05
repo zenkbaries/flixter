@@ -35,7 +35,6 @@
   			<ul class="lesson">
   				<% section.lessons.rank(:row_order).each do |lesson| %>
   					<li data-update-url="<%= instructor_lesson_path(lesson) %>">
-            <!-- <li> -->
   						<b><%= lesson.title %></b>
   						-
   						<%= lesson.subtitle %>
