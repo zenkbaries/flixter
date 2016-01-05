@@ -1,0 +1,2 @@
+class TesterformeController < ApplicationController
+end
