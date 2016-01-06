@@ -17,10 +17,11 @@ class Instructor::CoursesController < ApplicationController
   end
 
   def show
-    @course = Course.where(id: params[:id]).first
-    if @course.blank?
-      render :text => "Not Found", :status => :not_found
-    end
+    # @course = Course.where(id: params[:id]).first
+    # if @course.blank?
+    #   render :text => "Not Found", :status => :not_found
+    # end
+    @section = Section.new
   end
 
   private
